@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import LandingPage from "./components/LandingPage";
-import AddExpense from "./pages/AddExpense";
+import AddExpense from "./components/AddExpense";
 
 function App() {
   return (
