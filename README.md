@@ -8,16 +8,16 @@ A user-friendly Expense Tracker application built with React and TypeScript, des
 - **Date Tracking:** Users can specify the date of each expense, helping to track spending over time.
 - **Responsive Design:** The application is designed to be mobile-friendly and responsive.
 - **Summary View:** Users can see a summary of their total expenses and categorize their spending.
-## Visuals
-**Adding new expense**
+
+## **Adding new expense**
 ![Adding new Expense](./Screenshots/New_Expense.png)
-**Visualizing data with charts**
+## **Visualizing data with charts**
 ![Visualising Data with Charts](./Screenshots/Charts.png)
-**List of previously added expenses with edit and delete feature**
+## **List of previously added expenses with edit and delete feature**
 ![List of previously added expenses with edit and delete feature](./Screenshots/ExpenseList.png)
-**Very intuitive UI**
+## **Very intuitive UI**
 ![Very intuitive UI](./Screenshots/Confirm.png)
-**Responsive over multiple screen sizes**
+## **Responsive over multiple screen sizes**
 ![Responsive over multiple screen sizes](./Screenshots/phone.png)
 ![Responsive over multiple screen sizes](./Screenshots/Tablet.png)
 ## Technologies Used
