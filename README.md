@@ -17,5 +17,5 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/expense-tracker.git
+   git clone https://github.com/annick975/Possinove_PBL_Expense_Tracker.git
    cd expense-tracker
