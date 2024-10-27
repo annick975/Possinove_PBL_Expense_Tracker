@@ -58,7 +58,7 @@ type Expense = {
   description: string;
 };
 
-const COLORS = ["#3B82F6", "#10B981", "#F59E0B", "#EF4444", "#8B5CF6"];
+const COLORS = ["#3B82F6", "#05F21D", "#FA6E02", "#1A0D04", "#5105FC"];
 const categories = [
   "Food",
   "Transportation",
@@ -118,7 +118,7 @@ const ExpenseForm: React.FC<{
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
         <div className="space-y-2">
           <Label htmlFor="amount">Amount</Label>
           <div className="relative">
@@ -191,11 +191,11 @@ const ExpenseForm: React.FC<{
         </div>
       </div>
 
-      <div className="flex justify-end space-x-2">
+      <div className="flex justify-end space-x-2 text-[#16053e]">
         <Button type="button" variant="outline" onClick={onCancel}>
           Cancel
         </Button>
-        <Button type="submit">
+        <Button type="submit" className="bg-[#16053e]">
           {expense ? "Update Expense" : "Add Expense"}
         </Button>
       </div>
@@ -299,7 +299,7 @@ const ExpenseSummary: React.FC<{
   motivationalQuote: string;
 }> = ({ totalExpenses, motivationalQuote }) => {
   return (
-    <Card>
+    <Card className="bg-[#e1f1fc]">
       <CardHeader>
         <CardTitle>Total Expenses</CardTitle>
         <CardDescription>Sum of all expenses</CardDescription>
@@ -322,7 +322,7 @@ const PieChartComponent: React.FC<{
   chartData: { name: string; value: number }[];
 }> = ({ chartData }) => {
   return (
-    <Card>
+    <Card className="bg-[#e1f1fc]">
       <CardHeader>
         <CardTitle>Expenses by Category</CardTitle>
       </CardHeader>
@@ -358,17 +358,17 @@ const BarChartComponent: React.FC<{
   chartData: { month: string; amount: number }[];
 }> = ({ chartData }) => {
   return (
-    <Card>
+    <Card className="bg-[#e1f1fc]">
       <CardHeader>
         <CardTitle>Monthly Expenses</CardTitle>
       </CardHeader>
       <CardContent>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={500}>
           <BarChart data={chartData}>
             <XAxis dataKey="month" />
             <YAxis />
             <Tooltip />
-            <Bar dataKey="amount" fill="#8884d8" />
+            <Bar dataKey="amount" fill="#16053e" />
           </BarChart>
         </ResponsiveContainer>
       </CardContent>
@@ -473,14 +473,16 @@ export default function ExpenseTracker() {
   );
 
   return (
-    <div className="container mx-auto p-4 space-y-8">
-      <h1 className="text-4xl font-bold mb-2 text-center">Expense Tracker</h1>
+    <div className="container mx-auto p-4 bg-slate-950 space-y-8">
+      <h1 className="text-4xl font-bold mb-2 text-center text-white">
+        Expense Tracker
+      </h1>
       <p className="text-center text-muted-foreground">
         Keep your finances in check
       </p>
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0 md:space-x-4">
-        <div className="space-y-2 w-full md:w-auto">
+        <div className="space-y-2 w-full md:w-auto text-white">
           <Label htmlFor="filter">Filter by Category</Label>
           <Select value={filter} onValueChange={setFilter}>
             <SelectTrigger className="w-full md:w-[200px]">
@@ -496,7 +498,7 @@ export default function ExpenseTracker() {
             </SelectContent>
           </Select>
         </div>
-        <div className="space-y-2 w-full md:w-auto">
+        <div className="space-y-2 w-full md:w-auto text-white">
           <Label htmlFor="groupBy">Group by</Label>
           <Select value={groupBy} onValueChange={setGroupBy}>
             <SelectTrigger className="w-full md:w-[200px]">
@@ -510,7 +512,7 @@ export default function ExpenseTracker() {
         </div>
         <Button
           onClick={() => setIsFormOpen(!isFormOpen)}
-          className="w-full md:w-auto"
+          className="w-full md:w-auto bg-[#16053e]"
         >
           {isFormOpen ? (
             <Minus className="mr-2 h-4 w-4" />
@@ -530,7 +532,7 @@ export default function ExpenseTracker() {
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <Card>
+        <Card className="bg-[#e1f1fc]">
           <CardHeader>
             <CardTitle>
               {editingExpense ? "Edit Expense" : "Add New Expense"}
@@ -556,7 +558,7 @@ export default function ExpenseTracker() {
 
       <BarChartComponent chartData={barChartData} />
 
-      <Card>
+      <Card className="bg-[#e1f1fc]">
         <CardHeader>
           <CardTitle>Expense List</CardTitle>
         </CardHeader>
@@ -568,6 +570,7 @@ export default function ExpenseTracker() {
           />
         </CardContent>
       </Card>
+     
     </div>
   );
 }
