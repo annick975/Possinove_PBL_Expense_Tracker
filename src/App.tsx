@@ -1,18 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import LandingPage from "./components/LandingPage";
-import AddExpense from "./components/AddExpense";
+import React from "react";
+import ExpenseTracker from "./components/ExpenseTracker";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/add-expense" element={<AddExpense />} />
-      </Routes>
-    </Router>
+    <div>
+      {/* Use the ExpenseTracker component */}
+      <ExpenseTracker />
+    </div>
   );
-}
+};
 
 export default App;
